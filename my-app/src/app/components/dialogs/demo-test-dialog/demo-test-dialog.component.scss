@@ -1,0 +1,69 @@
+.dialog-container {
+  min-width: 940px;
+  max-width: 1180px;
+  padding: 60px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  border-radius: 40px;
+  background: var(--white);
+}
+
+::ng-deep {
+  .mat-mdc-dialog-container .mdc-dialog__surface {
+    border-radius: 40px !important;
+  }
+}
+
+.title-container {
+  width: 100%;
+  display: flex;
+  // align-items: center;
+  justify-content: space-between;
+}
+
+.title {
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 32px;
+  color: var(--black);
+}
+
+.close {
+  cursor: pointer;
+}
+
+.desc {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 140%;
+  color: var(--black);
+}
+
+.actions {
+  align-self: center;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.action {
+  width: 340px;
+  height: 69px;
+  font-family: var(--second-family);
+  font-weight: 500;
+  font-size: 24px;
+  border-radius: 24px;
+
+  &.main {
+    background: var(--blue);
+    border: none;
+    color: var(--white);
+  }
+  &.second {
+    background: var(--white);
+    border: 3px solid var(--blue);
+    color: var(--blue);
+  }
+}

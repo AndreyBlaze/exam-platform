@@ -1,0 +1,5 @@
+<div class="test-container" [ngStyle]="{'background': test.color}">
+  <span class="test-title">{{test.title}}</span>
+  <span class="test-quests-count">{{test.questionsCount}} заданий</span>
+  <button class="go-to" routerLink="/demo-tests/{{test.id}}">Перейти</button>
+</div>

@@ -1,0 +1,38 @@
+<div class="demo-container">
+  <span class="title">Подготовка к экзаменам</span>
+  <div class="filter-container">
+    <div class="types">
+      @for (t of types; track $index) {
+        <button class="type" [class.current-type]="this.filter().type === t">{{t}}</button>
+      }
+    </div>
+    <div class="dropdown-container" [class.show-items]="showItems()">
+      <input type="text" readonly class="choose" placeholder="Выберите предмет" (click)="showItems.set(!showItems())">
+      <img src="assets/icons/arrow-down.svg" alt="" class="arrow-down">
+      <div class="options">
+        @for (item of items(); track $index) {
+          <!-- <div class="option" (click)="setItem()">{{item}}</div> -->
+          <div class="option">{{item}}</div>
+        }
+      </div>
+    </div>
+    <div class="input-container">
+      <input type="text" class="input" placeholder="Поиск" [(ngModel)]="search" (ngModelChange)="searchDebouncer$.next($event)">
+      <svg class="search-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M22.5 22.5L15.5 15.5M1.5 9.66667C1.5 10.7391 1.71124 11.8011 2.12165 12.7919C2.53206 13.7827 3.13362 14.683 3.89196 15.4414C4.65031 16.1997 5.55059 16.8013 6.54142 17.2117C7.53224 17.6221 8.5942 17.8333 9.66667 17.8333C10.7391 17.8333 11.8011 17.6221 12.7919 17.2117C13.7827 16.8013 14.683 16.1997 15.4414 15.4414C16.1997 14.683 16.8013 13.7827 17.2117 12.7919C17.6221 11.8011 17.8333 10.7391 17.8333 9.66667C17.8333 8.5942 17.6221 7.53224 17.2117 6.54142C16.8013 5.55059 16.1997 4.65031 15.4414 3.89196C14.683 3.13362 13.7827 2.53206 12.7919 2.12165C11.8011 1.71124 10.7391 1.5 9.66667 1.5C8.5942 1.5 7.53224 1.71124 6.54142 2.12165C5.55059 2.53206 4.65031 3.13362 3.89196 3.89196C3.13362 4.65031 2.53206 5.55059 2.12165 6.54142C1.71124 7.53224 1.5 8.5942 1.5 9.66667Z" stroke="#464646" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+      </svg>
+    </div>
+  </div>
+  <div class="total-container">
+    <span class="total">Всего: {{total()}} вариантов</span>
+    <div class="orders">
+      <span class="order" [class.current-order]="currentOrder() === 'desc'" (click)="sortTests('desc')">Новые</span>
+      <span class="order" [class.current-order]="currentOrder() === 'asc'" (click)="sortTests('asc')">Старые</span>
+    </div>
+  </div>
+  <div class="tests">
+    @for (test of data(); track $index) {
+      <app-demo-test [test]="test"></app-demo-test>
+    }
+  </div>
+</div>

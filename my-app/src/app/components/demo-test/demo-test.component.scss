@@ -1,0 +1,36 @@
+.test-container {
+  border-radius: 40px;
+  width: 340px;
+  height: 340px;
+  display: flex;
+  flex-direction: column;
+  padding: 32px 24px;
+}
+
+.test-title {
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 28px;
+  line-height: 130%;
+  color: var(--black);
+}
+
+.test-quests-count {
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 24px;
+  color: var(--black);
+}
+
+.go-to {
+  align-self: center;
+  border-radius: 20px;
+  width: 220px;
+  height: 47px;
+  border: none;
+  background: var(--white);
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 20px;
+  color: var(--black);
+}

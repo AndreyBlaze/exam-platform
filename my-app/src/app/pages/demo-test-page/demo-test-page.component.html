@@ -1,0 +1,23 @@
+<div class="page-container">
+  <div class="return" routerLink="/demo-tests">
+    <svg width="15" height="26" viewBox="0 0 15 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M14.16 0.986667C14.0052 0.831456 13.8213 0.708313 13.6188 0.624291C13.4163 0.54027 13.1992 0.497021 12.98 0.497021C12.7608 0.497021 12.5437 0.54027 12.3412 0.624291C12.1387 0.708313 11.9548 0.831456 11.8 0.986667L0.720004 12.0667C0.596399 12.19 0.498336 12.3365 0.431427 12.4978C0.364518 12.6591 0.330078 12.832 0.330078 13.0067C0.330078 13.1813 0.364518 13.3542 0.431427 13.5155C0.498336 13.6768 0.596399 13.8233 0.720004 13.9467L11.8 25.0267C12.4533 25.68 13.5067 25.68 14.16 25.0267C14.8133 24.3733 14.8133 23.32 14.16 22.6667L4.50667 13L14.1733 3.33333C14.8133 2.69333 14.8133 1.62667 14.16 0.986667Z" fill="#282828" />
+    </svg>
+    Назад
+  </div>
+  <span class="test-title">{{demoTest()?.title}}</span>
+  <div class="desc-container">
+    <span class="test-desc">{{demoTest()?.description}}</span>
+    <img src="assets/images/demo-test-img.png" alt="" class="test-img">
+  </div>
+  <div class="test-info">
+    <div class="questions">
+      <span class="questions-text">Всего заданий</span>
+      <span class="questions-count">{{demoTest()?.questions?.length ?? 0}}</span>
+    </div>
+    <div class="actions">
+      <button class="start" (click)="start()">Начать тест</button>
+      <span class="time-to-complete">Примерное время выполнения {{demoTest()?.timeToComplete}} минут</span>
+    </div>
+  </div>
+</div>

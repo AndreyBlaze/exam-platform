@@ -1,0 +1,13 @@
+.app-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.school-logo {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 28px;
+  color: #000;
+  padding-top: 50px;
+}
